@@ -1,4 +1,5 @@
 import { register } from "swiper/element/bundle";
+
 import banner from "../../images/Banner/banner.jpg";
 
 import styles from "./index.module.scss";

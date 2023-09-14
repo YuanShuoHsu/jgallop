@@ -43,13 +43,13 @@ export default function TravelChoices() {
               我想跟團
             </span>
             <span className={styles.travelChoices__buttonSubText}>
-              上課+跟團旅遊，世界那麼大都想去看看
+              上課＋跟團旅遊，世界那麼大都想去看看
             </span>
           </div>
           <div className={styles.travelChoices__empty} />
         </button>
         <span className={styles.travelChoices__narration}>
-          上課+跟團旅遊，世界那麼大都想去看看
+          上課＋跟團旅遊，世界那麼大都想去看看
         </span>
       </div>
     </div>
