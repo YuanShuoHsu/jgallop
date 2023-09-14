@@ -1,2 +1,25 @@
-.banner {
+@import "../../styles/breakpoints.module.scss";
+
+swiper-container {
+  width: 100%;
+  height: auto;
+
+  &::part(bullet-active) {
+    background-color: #f24d51;
+  }
+
+  swiper-slide {
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .banner__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+  }
 }
