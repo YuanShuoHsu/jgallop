@@ -7,7 +7,14 @@
     width: 100%;
     height: auto;
 
+    &::part(bullet) {
+      width: 10px;
+      height: 10px;
+    }
+
     &::part(bullet-active) {
+      width: 10px;
+      height: 10px;
       background-color: #f24d51;
     }
 
