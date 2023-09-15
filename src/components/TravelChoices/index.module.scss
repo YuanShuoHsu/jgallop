@@ -50,13 +50,9 @@
       }
 
       &Text {
-        width: calc(100% - 60px - 30px);
         display: flex;
         flex-direction: column;
-
-        @include respond-to(lg) {
-          width: calc(100% - 40px - 20px);
-        }
+        flex: 1;
 
         .travelChoices__buttonMainText {
           color: #fff;
