@@ -1,6 +1,7 @@
 import Header from "../../components/Header";
 import Banner from "../../components/Banner";
 import TravelChoices from "../../components/TravelChoices";
+import Schools from "../../components/Schools";
 import Footer from "../../components/Footer";
 
 import styles from "./index.module.scss";
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <Banner />
       <TravelChoices />
+      <Schools />
       <Footer />
     </div>
   );

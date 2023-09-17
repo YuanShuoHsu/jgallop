@@ -15,7 +15,6 @@ export default function Banner() {
         auto-height="true"
         autoplay-delay="3000"
         autoplay-disable-on-interaction="false"
-        className={styles.banner}
         free-mode-enabled="true"
         free-mode-sticky="true"
         grab-cursor="true"

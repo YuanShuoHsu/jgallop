@@ -1,0 +1,52 @@
+@import "../../../styles/breakpoints.module.scss";
+
+.schoolsThumbsGallery {
+  width: 80%;
+  height: 80%;
+  
+  @include respond-to(md) {
+    display: none;
+  }
+
+  swiper-container {
+    width: 100%;
+    height: 100%;
+
+    swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .mySwiper {
+    width: 100%;
+    height: 80%;
+  }
+
+  .mySwiper2 {
+    padding: 10px 0;
+    box-sizing: border-box;
+    height: 20%;
+
+    swiper-slide {
+      width: 25%;
+      height: 100%;
+
+      img {
+        opacity: 0.2;
+      }
+    }
+
+    .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+  }
+}
