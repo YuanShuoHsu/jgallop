@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState } from "react";
 
 import { register } from "swiper/element/bundle";
 
@@ -9,7 +9,7 @@ import styles from "./index.module.scss";
 register();
 
 export default function SchoolsThumbsGallery() {
-  const thumbsSwiper = useRef(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
     <div className={styles.schoolsThumbsGallery}>
@@ -17,7 +17,8 @@ export default function SchoolsThumbsGallery() {
         className={styles.mySwiper}
         loop="true"
         navigation="true"
-        thumbs-swiper={thumbsSwiper.current}
+        space-between="10"
+        thumbs-swiper={thumbsSwiper}
       >
         <swiper-slide>
           <img src={banner} alt="banner" />
@@ -36,7 +37,7 @@ export default function SchoolsThumbsGallery() {
         className={styles.mySwiper2}
         free-mode="true"
         loop="true"
-        ref={thumbsSwiper}
+        onSwiper={setThumbsSwiper}
         space-between="10"
         slides-per-view="2"
         watch-slides-progress="true"

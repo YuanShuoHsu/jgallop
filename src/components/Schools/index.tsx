@@ -1,4 +1,4 @@
-import SchoolsSwiper from "./SchoolsSwiper";
+// import SchoolsSwiper from "./SchoolsSwiper";
 import SchoolsThumbsGallery from "./SchoolsThumbsGallery";
 
 import styles from "./index.module.scss";
@@ -10,7 +10,7 @@ export default function Schools() {
       <p className={styles.schools__description}>
         各地最知名學校，給你不同的體驗
       </p>
-      <SchoolsSwiper />  
+      {/* <SchoolsSwiper /> */}
       <SchoolsThumbsGallery />
     </div>
   );

@@ -1,0 +1,39 @@
+.footerContent {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    &Item {
+      .footerContent__heading {
+        color: #4d4948;
+      }
+
+      &Text {
+        font-size: 14px;
+        color: #4d4948;
+      }
+
+      .footerContent__paymentGroup {
+        display: flex;
+        gap: 10px;
+
+        .footerContent__paymentMethod {
+          width: 40px;
+          height: 40px;
+
+          .footerContent__paymentImage {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

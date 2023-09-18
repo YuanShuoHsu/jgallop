@@ -1,2 +1,45 @@
+@import "../../styles/breakpoints.module.scss";
+
 .footer {
+  padding: 10px 20px;
+  background-color: #e5e5e5;
+  display: flex;
+  gap: 10px;
+
+  @include respond-to(md) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    flex: 1;
+  }
+
+  &__content {
+    flex: 4;
+
+    @include respond-to(md) {
+      display: none;
+    }
+  }
+
+  &__separator {
+    flex: 0;
+
+    @include respond-to(md) {
+      display: none;
+    }
+  }
+
+  &__companyInfo {
+    flex: 4;
+  }
+
+  &__copyright {
+    display: none;
+
+    @include respond-to(md) {
+      display: block;
+    }
+  }
 }

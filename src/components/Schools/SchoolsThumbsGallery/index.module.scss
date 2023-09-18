@@ -1,9 +1,9 @@
 @import "../../../styles/breakpoints.module.scss";
 
 .schoolsThumbsGallery {
-  width: 80%;
-  height: 80%;
-  
+  width: 100%;
+  flex: 1;
+
   @include respond-to(md) {
     display: none;
   }
@@ -11,19 +11,39 @@
   swiper-container {
     width: 100%;
     height: 100%;
+  }
 
-    swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  body {
+    background: #000;
+    color: #000;
+  }
+
+  swiper-container {
+    width: 100%;
+    height: 200px;
+    // margin-left: auto;
+    // margin-right: auto;
+  }
+
+  swiper-slide {
+    background-size: cover;
+    background-position: center;
   }
 
   .mySwiper {
@@ -32,21 +52,25 @@
   }
 
   .mySwiper2 {
-    padding: 10px 0;
     box-sizing: border-box;
+    padding: 10px 0;
     height: 20%;
+  }
 
-    swiper-slide {
-      width: 25%;
-      height: 100%;
+  .mySwiper2 swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.2;
+  }
 
-      img {
-        opacity: 0.2;
-      }
-    }
+  .mySwiper2 .swiper-slide-thumb-active {
+    opacity: 1;
+  }
 
-    .swiper-slide-thumb-active {
-      opacity: 1;
-    }
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
