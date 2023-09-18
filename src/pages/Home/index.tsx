@@ -1,6 +1,7 @@
 import Header from "../../components/Header";
 import Banner from "../../components/Banner";
 import TravelChoices from "../../components/TravelChoices";
+import Countries from "../../components/Countries";
 import Schools from "../../components/Schools";
 import AboutUs from "../../components/AboutUs";
 import Footer from "../../components/Footer";
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <Banner />
       <TravelChoices />
+      <Countries />
       <Schools />
       <AboutUs />
       <Footer />

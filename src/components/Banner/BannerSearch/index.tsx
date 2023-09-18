@@ -10,12 +10,20 @@ export default function BannerSearch() {
     setSearchText(event.target.value);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(searchText);
+  };
+
   return (
     <div className={styles.bannerSearch}>
       <span className={styles.bannerSearch__title}>
         放假，給孩子一個有趣的假期
       </span>
-      <div className={styles.bannerSearch__inputContainer}>
+      <form
+        className={styles.bannerSearch__inputContainer}
+        onSubmit={handleSubmit}
+      >
         <input
           className={styles.bannerSearch__input}
           type="text"
@@ -23,14 +31,14 @@ export default function BannerSearch() {
           value={searchText}
           onChange={handleInputChange}
         />
-        <button className={styles.bannerSearch__button}>
+        <button className={styles.bannerSearch__button} type="submit">
           <img
             className={styles.bannerSearch__searchIcon}
             src={search}
             alt="search"
           />
         </button>
-      </div>
+      </form>
     </div>
   );
 }
