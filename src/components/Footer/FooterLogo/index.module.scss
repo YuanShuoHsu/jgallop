@@ -1,12 +1,7 @@
-@import "../../../styles/breakpoints.module.scss";
-
 .footerLogo {
   margin-top: 18px;
-
-  @include respond-to(md) {
-    width: 160px;
-    height: 120px;
-  }
+  max-width: 160px;
+  max-height: 120px;
 
   &__image {
     display: block;

@@ -6,16 +6,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 10px;
+    gap: 0 10px;
 
     &Item {
+      &Link {
+        color: #0056b3;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
       .footerContent__heading {
         color: #4d4948;
       }
 
       &Text {
-        font-size: 14px;
         color: #4d4948;
+        font-size: 14px;
+        transition: 0.2s color;
+
+        &:hover {
+          color: #0056b3;
+        }
       }
 
       .footerContent__paymentGroup {
