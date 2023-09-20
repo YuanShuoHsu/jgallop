@@ -16,9 +16,10 @@ export default function PopularGrid({ data }) {
   useEffect(() => {
     const swiperParams = {
       breakpoints: {
-        // 1200: {
-        //   slidesPerView: 3,
-        // },
+        1200: {
+          slidesPerView: 3,
+          grid: { rows: 2 },
+        },
       },
       freeMode: {
         enabled: true,
