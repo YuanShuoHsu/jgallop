@@ -13,6 +13,7 @@ export default function BannerSearch() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(searchText);
+    setSearchText("");
   };
 
   return (

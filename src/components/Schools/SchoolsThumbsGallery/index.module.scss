@@ -4,10 +4,6 @@
   flex: 1;
   background-color: cadetblue;
 
-  @include respond-to(md) {
-    display: none;
-  }
-
   swiper-container {
     width: 80%;
     height: 100%;
@@ -29,17 +25,9 @@
     object-fit: cover;
   }
 
-  body {
-    background: #000;
-    color: #000;
-  }
-
   swiper-container {
- 
     width: 80%;
     height: 200px;
-    // margin-left: auto;
-    // margin-right: auto;
   }
 
   swiper-slide {

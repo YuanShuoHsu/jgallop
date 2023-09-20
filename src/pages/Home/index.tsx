@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+
 import axios from "axios";
 
+import Loading from "../../components/Loading";
 import Header from "../../components/Header";
 import Banner from "../../components/Banner";
 import TravelChoices from "../../components/TravelChoices";
@@ -13,10 +15,15 @@ import Footer from "../../components/Footer";
 import styles from "./index.module.scss";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const [bannerData, setBannerData] = useState(null);
   const [countriesData, setCountriesData] = useState(null);
+  const [popularData, setPopularData] = useState(null);
+  const [aboutUsData, setAboutUsData] = useState(null);
 
   useEffect(() => {
+    document.body.style.overflow = "hidden";
+
     axios
       .post("https://jgdev.jgallop.com/funjatrip/api/mainPage")
       .then((response) => {
@@ -27,10 +34,24 @@ export default function Home() {
         setBannerData(bannerData);
         const countriesData = parsedData.rtData.blocks[1];
         setCountriesData(countriesData);
-        console.log(parsedData.rtData.blocks[1]);
+
+        const popularData = parsedData.rtData.blocks[3];
+        setPopularData(popularData);
+        const aboutUsData = parsedData.rtData.blocks[4];
+        setAboutUsData(aboutUsData);
+
+        setTimeout(() => {
+          document.body.style.overflow = "auto";
+          setIsLoading(false);
+        }, 1000);
       })
       .catch((error) => {
         console.error("請求錯誤：", error);
+
+        setTimeout(() => {
+          document.body.style.overflow = "auto";
+          setIsLoading(false);
+        }, 1000);
       });
 
     // axios
@@ -48,13 +69,14 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
+      {isLoading && <Loading />}
       <Header />
       {bannerData && <Banner data={bannerData} />}
       <TravelChoices />
       {countriesData && <Countries data={countriesData} />}
       <Schools />
-      <Popular />
-      <AboutUs />
+      {popularData && <Popular data={popularData} />}
+      {aboutUsData && <AboutUs data={aboutUsData} />}
       <Footer />
     </div>
   );

@@ -8,6 +8,16 @@ import menuItems, {
 import styles from "./index.module.scss";
 
 export default function HeaderNav() {
+  // const { i18n } = useTranslation()
+  // const [languages, setLanguages] = useState([])
+  // const [selectedOption, setSelectedOption] = useState(localStorage.getItem("i18nextLng").slice(0, 2));
+
+  // useEffect(() => {
+  //   i18n.changeLanguage(selectedOption)
+  //   const resources = i18n.services.resourceStore.data
+  //   setLanguages(Object.keys(resources))
+  // }, [i18n, selectedOption])
+
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const headerNavRef = useRef<HTMLUListElement | null>(null);
 

@@ -1,8 +1,15 @@
 .schools {
   height: calc(100vh - 60px);
-  background-color: #000;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+
+  background-color: #212529;
   display: flex;
   flex-direction: column;
+  overflow: hidden auto;
 
   &__title {
     color: #fff;
