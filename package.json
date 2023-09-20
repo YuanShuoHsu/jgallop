@@ -12,6 +12,7 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "axios": "^1.5.0",
+    "chinese-s2t": "^1.0.0",
     "node-sass": "^7.0.3",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",

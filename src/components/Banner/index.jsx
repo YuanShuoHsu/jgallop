@@ -2,13 +2,11 @@ import BannerSearch from "./BannerSearch";
 
 import { register } from "swiper/element/bundle";
 
-import banner from "../../images/Banner/banner.jpg";
-
 import styles from "./index.module.scss";
 
 register();
 
-export default function Banner() {
+export default function Banner({ data }) {
   return (
     <div className={styles.banner}>
       <swiper-container
@@ -17,19 +15,22 @@ export default function Banner() {
         autoplay-disable-on-interaction="false"
         free-mode-enabled="true"
         free-mode-sticky="true"
-        grab-cursor="true"
+        grab-cursor="tr e"
         keyboard-enabled="true"
         loop="true"
         pagination="true"
         pagination-clickable="true"
         speed="500"
       >
-        <swiper-slide>
-          <img className={styles.banner__image} src={banner} alt="banner" />
-        </swiper-slide>
-        <swiper-slide>
-          <img className={styles.banner__image} src={banner} alt="banner" />
-        </swiper-slide>
+        {data.photoList.map((photo, index) => (
+          <swiper-slide key={index}>
+            <img
+              className={styles.banner__image}
+              src={`https://jgdev.jgallop.com/funjatrip/images/${photo.blockPhotoPath}/${photo.blockPhotoName}`}
+              alt={photo.blockPhotoName}
+            />
+          </swiper-slide>
+        ))}
       </swiper-container>
       <BannerSearch />
     </div>
