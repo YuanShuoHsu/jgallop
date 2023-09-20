@@ -1,4 +1,77 @@
-.countriesSwiper {
+@import "../../../styles/breakpoints.module.scss";
+
+swiper-container {
+  width: 100%;
   flex: 1;
-  background-color: cadetblue;
+  background-image: url("../../../images/Countries/countries.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+
+  &::part(bullet) {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::part(bullet-active) {
+    width: 10px;
+    height: 10px;
+    background-color: #f24d51;
+  }
+
+  &::part(button-prev),
+  &::part(button-next) {
+    color: #d3d3d3;
+  }
+
+  &::part(pagination) {
+    @include respond-to(md) {
+      display: none;
+    }
+  }
+
+  swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .countriesSwiper__box {
+      position: relative;
+      width: 50%;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      cursor: pointer;
+      overflow: hidden;
+
+      &:hover {
+        .countriesSwiper__text {
+          opacity: 0.8;
+        }
+      }
+
+      .countriesSwiper__text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s opacity;
+      }
+
+      .countriesSwiper__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+    }
+  }
 }

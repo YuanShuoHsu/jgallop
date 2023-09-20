@@ -14,24 +14,44 @@
   .headerNav__item {
     position: relative;
     padding: 0 10px;
-    width: 60px;
-    height: 50px;
     border-radius: 4px;
-    // background-color: cadetblue;
-    font-size: 16px;
     cursor: pointer;
-    // display: flex;
-    // align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 
-    // &::before {
-    //   position: absolute;
-    //   content: "";
-    //   right: 5px;
-    //   width: 0;
-    //   height: 0;
-    //   border: solid transparent;
-    //   border-width: 12px 8px 8px 8px;
-    //   border-top-color: red;
-    // }
+    &--active {
+      .headerNav__itemCaret {
+        border-width: 0 8px 12px 8px;
+      }
+    }
+
+    &:hover {
+      .headerNav__itemText {
+        opacity: 0.8;
+      }
+
+      .headerNav__itemCaret {
+        opacity: 0.8;
+      }
+    }
+
+    &Text {
+      color: #4d4948;
+      font-size: 16px;
+      line-height: 50px;
+      transition: 0.2s opacity;
+    }
+
+    &Caret {
+      width: 0;
+      height: 0;
+      border: solid transparent;
+      border-width: 12px 8px 0 8px;
+      border-top-color: red;
+      border-bottom-color: red;
+      transition: 0.2s opacity;
+    }
   }
 }
