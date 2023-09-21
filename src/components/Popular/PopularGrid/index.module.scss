@@ -1,0 +1,223 @@
+@import "../../../styles/breakpoints.module.scss";
+
+.popularGrid {
+  flex: 1;
+  overflow: hidden;
+  width: 80%;
+
+  @include respond-to(md) {
+    width: 100%;
+  }
+
+  swiper-container {
+    padding: 0 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    &::part(bullet) {
+      width: 12px;
+      height: 12px;
+    }
+
+    &::part(bullet-active) {
+      width: 12px;
+      height: 12px;
+      background-color: #f24d51;
+    }
+
+    &::part(button-prev),
+    &::part(button-next) {
+      color: #d3d3d3;
+    }
+
+    swiper-slide {
+      width: 100%;
+      height: calc((100% - 30px) / 2);
+      background-color: #fff;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      .popularGrid__header {
+        width: 100%;
+        flex: 1;
+        overflow: hidden;
+
+        &Image {
+          display: block;
+          width: 100%;
+          height: 100%;
+          aspect-ratio: 16/9;
+          object-fit: cover;
+        }
+      }
+
+      .popularGrid__main {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        .popularGrid__location {
+          width: 100%;
+          display: flex;
+          gap: 5px;
+
+          &Icon {
+            padding: 2px;
+            box-sizing: border-box;
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+
+            &Image {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+
+          &Text {
+            color: #8c8c8c;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 14px;
+            line-height: 20px;
+
+            @include respond-to(md) {
+              font-size: 12px;
+            }
+          }
+        }
+
+        .popularGrid__theme {
+          width: 100%;
+          height: 60px;
+          display: flex;
+          flex-wrap: wrap;
+
+          .popularGrid__title {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @include respond-to(lg) {
+              font-size: 14px;
+            }
+          }
+
+          .popularGrid__minDays {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @include respond-to(lg) {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .popularGrid__section {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+
+          .popularGrid__attendance {
+            display: flex;
+            flex: 1;
+            gap: 5px;
+
+            &Icon {
+              width: 20px;
+              height: 20px;
+
+              &Image {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+
+            &Text {
+              font-size: 14px;
+              line-height: 20px;
+              white-space: nowrap;
+
+              @include respond-to(md) {
+                font-size: 12px;
+              }
+            }
+          }
+
+          .popularGrid__interest {
+            display: flex;
+            flex: 1;
+            gap: 5px;
+
+            &Icon {
+              width: 20px;
+              height: 20px;
+
+              &Image {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+
+            &Text {
+              font-size: 14px;
+              line-height: 20px;
+              white-space: nowrap;
+
+              @include respond-to(md) {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+
+      .popularGrid__footer {
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 5px;
+
+        &Text {
+          line-height: 20px;
+          font-size: 14px;
+
+          @include respond-to(md) {
+            font-size: 12px;
+          }
+        }
+
+        &Price {
+          color: #f24d51;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 20px;
+
+          @include respond-to(md) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

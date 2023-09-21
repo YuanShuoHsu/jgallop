@@ -1,0 +1,13 @@
+.popular {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden auto;
+
+  &__title {
+  }
+
+  &__description {
+  }
+}

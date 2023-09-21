@@ -1,0 +1,53 @@
+.footerContent {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 0 10px;
+
+    &Item {
+      &Link {
+        color: #0056b3;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .footerContent__heading {
+        color: #4d4948;
+      }
+
+      &Text {
+        color: #4d4948;
+        font-size: 14px;
+        transition: 0.2s color;
+
+        &:hover {
+          color: #0056b3;
+        }
+      }
+
+      .footerContent__paymentGroup {
+        display: flex;
+        gap: 10px;
+
+        .footerContent__paymentMethod {
+          width: 40px;
+          height: 40px;
+
+          .footerContent__paymentImage {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

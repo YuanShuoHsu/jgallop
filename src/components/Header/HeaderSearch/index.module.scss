@@ -1,0 +1,47 @@
+@import "../../../styles/breakpoints.module.scss";
+
+.headerSearch {
+  padding: 0 5px;
+  box-sizing: border-box;
+  flex: 1;
+  // max-width: 350px;
+  height: 40px;
+  border: 1px solid #21252929;
+  border-radius: 20px;
+  display: none;
+  align-items: center;
+  gap: 5px;
+
+  @include respond-to(md) {
+    display: flex;
+  }
+
+  &__input {
+    padding: 0 10px;
+    width: 0;
+    flex: 1;
+    border: none;
+    outline: none;
+    color: #495057;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  &__button {
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: #fcc229;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    .headerSearch__searchIcon {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
