@@ -2,15 +2,18 @@
 
 .popularGrid {
   flex: 1;
+  overflow: hidden;
+  width: 80%;
+
+  @include respond-to(md) {
+    width: 100%;
+  }
 
   swiper-container {
+    padding: 0 10px;
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    // padding: 0 10px;
-    box-sizing: border-box;
-    background-color: cadetblue;
 
     &::part(bullet) {
       width: 12px;
@@ -23,6 +26,11 @@
       background-color: #f24d51;
     }
 
+    &::part(button-prev),
+    &::part(button-next) {
+      color: #d3d3d3;
+    }
+
     swiper-slide {
       width: 100%;
       height: calc((100% - 30px) / 2);
@@ -30,8 +38,6 @@
       border-radius: 4px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       overflow: hidden;
 
       .popularGrid__header {
@@ -56,13 +62,16 @@
         gap: 10px;
 
         .popularGrid__location {
+          width: 100%;
           display: flex;
           gap: 5px;
 
           &Icon {
+            padding: 2px;
+            box-sizing: border-box;
             width: 20px;
             height: 20px;
-            background-color: cadetblue;
+            opacity: 0.5;
 
             &Image {
               display: block;
@@ -73,7 +82,12 @@
           }
 
           &Text {
+            color: #8c8c8c;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             font-size: 14px;
+            line-height: 20px;
 
             @include respond-to(md) {
               font-size: 12px;
@@ -81,11 +95,36 @@
           }
         }
 
-        .popularGrid__title {
-          font-size: 20px;
+        .popularGrid__theme {
+          width: 100%;
+          height: 60px;
+          display: flex;
+          flex-wrap: wrap;
 
-          @include respond-to(md) {
-            font-size: 14px;
+          .popularGrid__title {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @include respond-to(lg) {
+              font-size: 14px;
+            }
+          }
+
+          .popularGrid__minDays {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @include respond-to(lg) {
+              font-size: 14px;
+            }
           }
         }
 
@@ -103,7 +142,6 @@
             &Icon {
               width: 20px;
               height: 20px;
-              background-color: cadetblue;
 
               &Image {
                 display: block;
@@ -132,7 +170,6 @@
             &Icon {
               width: 20px;
               height: 20px;
-              background-color: cadetblue;
 
               &Image {
                 display: block;

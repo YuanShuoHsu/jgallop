@@ -18,6 +18,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [bannerData, setBannerData] = useState(null);
   const [countriesData, setCountriesData] = useState(null);
+  const [schoolsData, setSchoolsData] = useState(null);
   const [popularData, setPopularData] = useState(null);
   const [aboutUsData, setAboutUsData] = useState(null);
 
@@ -34,7 +35,8 @@ export default function Home() {
         setBannerData(bannerData);
         const countriesData = parsedData.rtData.blocks[1];
         setCountriesData(countriesData);
-
+        const schoolsData = parsedData.rtData.blocks[2];
+        setSchoolsData(schoolsData);
         const popularData = parsedData.rtData.blocks[3];
         setPopularData(popularData);
         const aboutUsData = parsedData.rtData.blocks[4];
@@ -74,7 +76,7 @@ export default function Home() {
       {bannerData && <Banner data={bannerData} />}
       <TravelChoices />
       {countriesData && <Countries data={countriesData} />}
-      <Schools />
+      {schoolsData && <Schools data={schoolsData} />}
       {popularData && <Popular data={popularData} />}
       {aboutUsData && <AboutUs data={aboutUsData} />}
       <Footer />

@@ -3,7 +3,11 @@ import GalleryThumbs from "./GalleryThumbs";
 
 import styles from "./index.module.scss";
 
-export default function Schools() {
+interface SchoolsProps {
+  data: {};
+}
+
+export default function Schools({ data }: SchoolsProps) {
   return (
     <div className={styles.schools}>
       <h2 className={styles.schools__title}>名校遊學趣</h2>

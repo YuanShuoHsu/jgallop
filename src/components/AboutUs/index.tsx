@@ -25,7 +25,7 @@ export default function AboutUs({ data }: AboutUsProps) {
       <h2 className={styles.aboutUs__title}>
         {fixUTF8Encoding(data.mainTitle)}
       </h2>
-      <p className={styles.aboutUs__description} lang="zh">
+      <p className={styles.aboutUs__description}>
         {fixUTF8Encoding(data.subTitle)}
       </p>
       <Link to="" className={styles.aboutUs__link}>

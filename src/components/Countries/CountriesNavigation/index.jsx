@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import { fixUTF8Encoding } from "../../../utils/fixUTF8Encoding";
 
+import hotballon from "../../../images/Countries/CountriesNavigation/hotballon.svg";
+
 import { register } from "swiper/element/bundle";
 
 import styles from "./index.module.scss";
@@ -11,6 +13,7 @@ import styles from "./index.module.scss";
 register();
 
 export default function CountriesNavigation({ data }) {
+  console.log(data);
   const swiperEl = useRef(null);
 
   useEffect(() => {
@@ -58,8 +61,22 @@ export default function CountriesNavigation({ data }) {
         {data.areaList.map((area) => (
           <swiper-slide key={area.areaId}>
             <Link to="" className={styles.countriesNavigation__link}>
+              <div className={styles.countriesNavigation__ballon}>
+                <img
+                  className={styles.countriesNavigation__ballonIcon}
+                  src={hotballon}
+                  alt="ballon"
+                />
+                <div className={styles.countriesNavigation__course}>
+                  <span className={styles.countriesNavigation__courseCount}>
+                    {area.travelCount}
+                  </span>
+                  <span className={styles.countriesNavigation__courseText}>
+                    課程
+                  </span>
+                </div>
+              </div>
               <div className={styles.countriesNavigation__box}>
-                <span>{area.travelCount}課程</span>
                 <span className={styles.countriesNavigation__text}>
                   {fixUTF8Encoding(area.areaName)}
                 </span>
